@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fish Weight Prediction</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="mb-4">Fish Weight Prediction</h2>
+    <form method="post">
+      <div class="form-group">
+        <label for="length1">Length1:</label>
+        <input type="number" class="form-control" id="length1" name="length1" placeholder="Enter Length1" value="15.0">
+      </div>
+      <div class="form-group">
+        <label for="length2">Length2:</label>
+        <input type="number" class="form-control" id="length2" name="length2" placeholder="Enter Length2" value="16.2">
+      </div>
+      <div class="form-group">
+        <label for="length3">Length3:</label>
+        <input type="number" class="form-control" id="length3" name="length3" placeholder="Enter Length3" value="17.2">
+      </div>
+      <div class="form-group">
+        <label for="height">Height:</label>
+        <input type="number" class="form-control" id="height" name="height" placeholder="Enter Height" value="4.5924">
+      </div>
+      <div class="form-group">
+        <label for="width">Width:</label>
+        <input type="number" class="form-control" id="width" name="width" placeholder="Enter Width" value="2.6316">
+      </div>
+      <div class="form-group">
+        <label for="species">Species:</label>
+        <select class="form-control" id="species" name="species">
+          <option value="Bream">Bream</option>
+          <option value="Parkki">Parkki</option>
+          <option value="Perch" selected>Perch</option>
+          <option value="Pike">Pike</option>
+          <option value="Roach">Roach</option>
+          <option value="Smelt">Smelt</option>
+          <option value="Whitefish">Whitefish</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Predict Weight</button>
+    </form>
+    <div class="mt-4">
+      <h4>Predicted Weight:</h4>
+      <p>{{ prediction }}</p>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
