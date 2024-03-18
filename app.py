@@ -11,24 +11,12 @@ import pickle
 
 app = Flask(__name__)
 
-# Load the dataset
-fish_data = pd.read_csv("Fish.csv")
-fish_data = pd.get_dummies(fish_data, columns=['Species'])
 
-# Data preprocessing
-X = fish_data.drop(columns=["Weight"])
-y = fish_data["Weight"]
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Training the model
-model = RandomForestRegressor()
-model.fit(X_train, y_train)
-
-# Evaluate the model
-y_pred = model.predict(X_test)
-mse = mean_squared_error(y_test, y_pred)
-print("Mean Squared Error:", mse)
 # Load the trained model
+# Load the model from the file
+with open('prediction.pkl', 'rb') as f:
+    model = pickle.load(f)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
